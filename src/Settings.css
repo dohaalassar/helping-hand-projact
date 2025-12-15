@@ -1,0 +1,373 @@
+:root {
+  --main-color: #3b82f6;
+  --s-background-color: rgb(255 255 255 / 50%);
+  --main-yellow-color: #b88a00;
+  --main-green-color: #2e7d32;
+  --main-red-color: #b82800;
+  --y-background-color: #fff7d1;
+  --g-background-color: #d6f7d9;
+  --r-background-color: #fbd2c2;
+  --foreground: hsl(222, 47%, 11%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --main-color-body: #f1f1f1;
+  --header-tabel-background: #f0fbff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: var(--main-color-body);
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 97px;
+}
+header .container::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color: #a2a2a2;
+  bottom: 0;
+  width: calc(100% - 30px);
+  left: 15px;
+}
+header .logo {
+  height: 40px;
+  font-size: 24px; /* Added for text logo */
+  font-weight: bold;
+}
+header nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header nav .toggle-menu {
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  header nav .toggle-menu {
+    display: none;
+  }
+}
+header nav ul {
+  display: flex;
+  list-style: none; /* React cleanup */
+}
+@media (max-width: 767px) {
+  header nav ul {
+    display: none;
+  }
+  /* Adjusted for React class toggling */
+  header nav ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--s-background-color);
+  }
+  header nav ul li a {
+    padding: 15px !important;
+  }
+}
+header nav ul li a {
+  padding: 40px 10px;
+  display: block;
+  color: #0c0c0c;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+.landing {
+  position: relative;
+  min-height: 100vh; /* Added to ensure full page background */
+  padding-top: 120px; /* Added spacing for header */
+}
+.landing .contact {
+  /* Removed absolute positioning to let it flow naturally in React layout, 
+     but keeping width/margin logic */
+  width: 100%;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  margin-top: -25px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.page-header p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.settings-content {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.block-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.card {
+  background-color: var(--s-background-color);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.profile-role {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.profile-text {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting-main {
+  max-width: 80%;
+}
+
+.setting-label {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.setting-value {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.setting-change {
+  border: none;
+  background: transparent;
+  color: var(--main-color);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.sub-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.password-form .form-row {
+  margin-bottom: 14px;
+}
+
+.password-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.password-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.password-form input:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.25);
+}
+
+.form-row-inline {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.form-row-inline .form-field {
+  flex: 1 1 200px;
+}
+
+.form-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background-color: var(--main-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.96;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 767px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .setting-main {
+    max-width: 100%;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
