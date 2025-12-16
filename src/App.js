@@ -18,8 +18,8 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/sdq/:id" element={<SDQParent />} />
         <Route path="/child/:id" element={<ChildReport />} />
-        <Route path="/send-guided-message" element={<SendGuidedMessage />} />
-        <Route path="/schedule-session" element={<ScheduleSession />} />
+        <Route path="/send-guided-message/:id" element={<SendGuidedMessage />} />
+        <Route path="/schedule-session/:id" element={<ScheduleSession />} />
 
       </Routes>
     </BrowserRouter>

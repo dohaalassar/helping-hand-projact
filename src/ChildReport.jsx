@@ -285,7 +285,7 @@ const ChildReportPage = () => {
                     <span className="value">{data.age}</span>
                   </div>
                   <div className="info-row">
-                    <a className="label Parant" href="SDQparant.html">SDQ Parent:</a>
+                    <Link to={`/sdq/${id}`} className="label Parant">SDQ Parent:</Link>
                     <span className="value">{data.sdqParent}</span>
                   </div>
                   <div className="info-row">
@@ -364,8 +364,8 @@ const ChildReportPage = () => {
                 {/* Action Buttons */}
                 <div className="hero-buttons">
                   {/* <a href="#" onClick={handleWarning} className="btn btn-warning">Send Warning Message</a> <a href="#" onClick={handleSchedule} className="btn btn-schedule">Schedule Meeting / Follow Up</a> */}
-                  <a href="/send-warning" className="btn btn-warning">Send Warning Message</a>
-                  <a href="/schedule-meeting" className="btn btn-schedule">Schedule Meeting / Follow Up</a>
+                  <Link  to={`/send-guided-message/${id}`} className="btn btn-warning"> Send Warning Message</Link>
+                  <Link to={`/schedule-session/${id}`} className="btn btn-schedule">Schedule Meeting / Follow Up</Link>
                   <a href="#" onClick={handleReview} className="btn btn-review">Report Review</a>
                 </div>
 

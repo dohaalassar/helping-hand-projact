@@ -62,28 +62,10 @@ const PsyPage = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             ></i>
             <ul className={isMenuOpen ? "open" : ""}>
-<li>
-  <li><NavLink to="/" className="active">Dashboard</NavLink></li>
-</li>
-
-<li>
-  <NavLink to="/cases">
-    <i className="fa-solid fa-users"></i> All Cases
-  </NavLink>
-</li>
-
-<li>
-  <NavLink to="/settings">
-    <i className="fa-solid fa-chart-column"></i> Settings
-  </NavLink>
-</li>
-
-<li>
-  <a href="#">
-    <i className="fa-solid fa-right-from-bracket"></i> Log Out
-  </a>
-</li>
-
+              <li><NavLink to="/" className="active">Dashboard</NavLink></li>
+              <li><NavLink to="/cases">All Cases</NavLink></li>
+              <li><NavLink to="/settings">Settings</NavLink></li>
+              <li><a href="#"><i className="fa-solid fa-right-from-bracket"></i> Log Out</a></li>
             </ul>
           </nav>
         </div>

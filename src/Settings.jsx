@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Settings.css';
 
 // Placeholder image (if you don't have one in public folder yet)
@@ -104,10 +105,10 @@ const Settings = () => {
                 onClick={toggleMenu}
             ></i>
             <ul className={isMenuOpen ? "open" : ""}>
-              <li><a href="/dashboard"><i className="fa-solid fa-table-columns"></i> Dashboard</a></li>
-              <li><a href="/cases"><i className="fa-solid fa-users"></i> All Cases</a></li>
-              <li><a className="active" href="/settings"><i className="fa-solid fa-chart-column"></i> Settings</a></li>
-              <li><a href="/logout"><i className="fa-solid fa-right-from-bracket"></i> Log Out</a></li>
+              <li><NavLink to="/">Dashboard</NavLink></li>
+              <li><NavLink to="/cases">All Cases</NavLink></li>
+              <li><NavLink to="/settings" className="active">Settings</NavLink></li>
+              <li><a href="#"><i className="fa-solid fa-right-from-bracket"></i> Log Out</a></li>
             </ul>
           </nav>
         </div>

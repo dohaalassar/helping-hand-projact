@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
 
 import './Warning.css'; // Link the CSS file
 
 const SendGuidedMessage = () => {
-  
+  const { id } = useParams();
   // --- STATE ---
   
   const [title, setTitle] = useState("");
@@ -46,11 +47,10 @@ Dr. Ahmed Al-Masri`);
       <div className="card">
         
         {/* Header / Back Link */}
-<Link className="back" to="/child">
+<Link className="back" to={`/child/${id}`}>
   <i className="fa-solid fa-arrow-left"></i>
   <p>Back to Child Report</p>
 </Link>
-
 
         <div className="card-header">
           <div className="icon-circle">

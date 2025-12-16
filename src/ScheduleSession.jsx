@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+
 import './Schedule.css'; // Connects the CSS
 
 const ScheduleSession = () => {
+  const { id } = useParams();
+const navigate = useNavigate();
+
   // --- STATE MANAGEMENT ---
   const [formData, setFormData] = useState({
     reason: '',
@@ -27,7 +32,8 @@ const ScheduleSession = () => {
   const handleClose = () => {
     // In React Router, you would use navigate('/cases')
     // For now, we use window.location as requested in your script
-    window.location.href = "/cases";
+      navigate('/child/${id}');
+
   };
 
   // 3. Handle Submit
