@@ -96,23 +96,24 @@ const Settings = () => {
   return (
     <>
       {/* Header */}
+      {/* --- HEADER ---
       <header>
         <div className="container">
           <div className="logo">🤝 Helping Hand</div>
           <nav>
             <i 
-                className="fas fa-bars toggle-menu" 
-                onClick={toggleMenu}
+              className="fas fa-bars toggle-menu" 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             ></i>
             <ul className={isMenuOpen ? "open" : ""}>
-              <li><NavLink to="/">Dashboard</NavLink></li>
+              <li><NavLink to="/" className="active">Dashboard</NavLink></li>
               <li><NavLink to="/cases">All Cases</NavLink></li>
-              <li><NavLink to="/settings" className="active">Settings</NavLink></li>
+              <li><NavLink to="/settings">Settings</NavLink></li>
               <li><a href="#"><i className="fa-solid fa-right-from-bracket"></i> Log Out</a></li>
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Container */}
       <div className="container">
@@ -251,9 +252,9 @@ const Settings = () => {
             </div>
             
             {/* Footer */}
-            <footer>
+            {/* <footer>
               <p>&copy; 2025 Helping Hand. All rights reserved.</p>
-            </footer>
+            </footer> */}
 
           </div>
         </div>

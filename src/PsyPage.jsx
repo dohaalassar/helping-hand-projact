@@ -52,7 +52,7 @@ const PsyPage = () => {
 
   return (
     <>
-      {/* --- HEADER --- */}
+      {/* --- HEADER ---
       <header>
         <div className="container">
           <div className="logo">🤝 Helping Hand</div>
@@ -69,7 +69,7 @@ const PsyPage = () => {
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       {/* --- MAIN CONTENT --- */}
       <div className="container">
@@ -161,10 +161,10 @@ const PsyPage = () => {
                 </div>
               </div>
             </div>
-
+{/* 
             <footer>
               <p>&copy; 2025 Helping Hand. All rights reserved.</p>
-            </footer>
+            </footer> */}
 
           </div>
         </div>

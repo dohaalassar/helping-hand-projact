@@ -52,7 +52,7 @@ const CasesPage = () => {
   return (
     <div>
       {/* Header */}
-      <header>
+      {/* <header>
         <div className="container">
           <div className="logo">🤝 Helping Hand</div>
           <nav>
@@ -68,7 +68,7 @@ const CasesPage = () => {
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Content */}
       <div className="container">
@@ -147,9 +147,9 @@ const CasesPage = () => {
       </div>
 
       {/* Footer */}
-      <footer>
+      {/* <footer>
         <p>&copy; 2025 Helping Hand. All rights reserved.</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };

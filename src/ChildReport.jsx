@@ -246,7 +246,7 @@ const ChildReportPage = () => {
   return (
     <div>
       {/* Header */}
-      <header>
+      {/* <header>
         <div className="container">
           <div className="logo">🤝 Helping Hand</div>
           <nav>
@@ -262,7 +262,7 @@ const ChildReportPage = () => {
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Content */}
       <div className="container">
@@ -291,7 +291,7 @@ const ChildReportPage = () => {
                   <div className="info-row">
                     <span className="label">Total Score(0-40):</span>
                     {/* Display dynamically calculated score */}
-                    <span className="value">{calculatedTotalScore}/50</span> 
+                    <span className="value">{calculatedTotalScore}/40</span> 
                   </div>
                 </div>
 
@@ -377,9 +377,9 @@ const ChildReportPage = () => {
         </div>
         
         {/* Footer */}
-        <footer>
+        {/* <footer>
           <p>&copy; 2025 Helping Hand. All rights reserved.</p>
-        </footer>
+        </footer> */}
       </div>
 
       {/* Overlay */}

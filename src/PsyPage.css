@@ -7,7 +7,7 @@
   --header-tabel-background: #c0eafa;
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -20,7 +20,7 @@ body {
   line-height: 1.6;
   color: #333;
   background: var(--main-color-body);
-}
+} */
 
 .container {
   padding-left: 15px;
@@ -52,11 +52,13 @@ body {
 
 /* Start Header */
 header {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  z-index: 2;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+background-color: white;
+ 
 }
+
 
 header .container {
   display: flex;
