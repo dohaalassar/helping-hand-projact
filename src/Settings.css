@@ -155,8 +155,7 @@ header nav ul li a:hover {
 
 .landing {
   position: relative;
-  min-height: 100vh; /* Added to ensure full page background */
-  padding-top: 120px; /* Added spacing for header */
+  /* min-height: 100vh; Added to ensure full page background */
 }
 .landing .contact {
   /* Removed absolute positioning to let it flow naturally in React layout, 
@@ -174,6 +173,7 @@ header nav ul li a:hover {
   font-weight: 700;
   color: #111827;
   margin-bottom: 4px;
+  margin-top: 30px;
 }
 
 .page-header p {

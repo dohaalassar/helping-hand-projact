@@ -125,7 +125,7 @@ header nav ul li a:hover {
   position: absolute;
   left: 0;
   top: 20%;
-  transform: translateY(120px);
+  transform: translateY(10px);
   width: 100%;
 }
 
@@ -313,6 +313,5 @@ p.exp { font-size: 13px; }
   z-index: 90;
   display: none;
 }
-.card-overlay.active { display: block; }
 
 footer { text-align: center; padding: 2rem; color: var(--muted-foreground); }

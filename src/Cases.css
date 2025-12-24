@@ -151,7 +151,7 @@ header nav ul li a:hover {
   position: absolute;
   left: 0;
   top: 20%;
-  transform: translateY(120px);
+  transform: translateY(10px);
   width: 100%;
 }
 
@@ -287,7 +287,7 @@ header nav ul li a:hover {
 }
 
 /* Status Styles */
-.status {
+.case-status {
   padding: 5px 10px;
   border-radius: 8px;
   font-size: 0.8rem;
@@ -297,9 +297,9 @@ header nav ul li a:hover {
   justify-self: start;
 }
 
-.status.pending { background: var(--y-background-color); color: var(--main-yellow-color); margin-left: 35px; margin-right: 10px; }
-.status.new { background: var(--g-background-color); color: var(--main-green-color); margin-left: 35px; margin-right: 10px; }
-.status.red { background: var(--r-background-color); color: var(--main-red-color); margin-left: 35px; margin-right: 10px; }
+.case-status.pending { background: var(--y-background-color); color: var(--main-yellow-color); margin-left: 35px; margin-right: 10px; }
+.case-status.new { background: var(--g-background-color); color: var(--main-green-color); margin-left: 35px; margin-right: 10px; }
+.case-status.red { background: var(--r-background-color); color: var(--main-red-color); margin-left: 35px; margin-right: 10px; }
 
 /* Buttons */
 .view-btn {

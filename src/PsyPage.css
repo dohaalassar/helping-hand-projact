@@ -152,8 +152,8 @@ header nav ul li a:hover {
 .landing {
   position: relative;
   /* Added min-height to ensure content fits */
-  min-height: 100vh; 
-  padding-top: 120px; /* Space for absolute header */
+  /* min-height: 100vh;  */
+
 }
 
 .landing .contact {
@@ -333,7 +333,7 @@ header nav ul li a:hover {
 }
 
 /* Status styles */
-.status {
+.case-status {
   padding: 5px 10px;
   border-radius: 8px;
   font-size: 0.8rem;
@@ -343,17 +343,17 @@ header nav ul li a:hover {
   justify-self: center; /* Changed from start to center to align with header */
 }
 
-.status.pending {
+.case-status.pending {
   background: #fff7d1;
   color: #b88a00;
 }
 
-.status.new {
+.case-status.new {
   background: #d6f7d9;
   color: #2e7d32;
 }
 
-.status.red {
+.case-status.red {
   background: #fbd2c2;
   color: #b82800;
 }

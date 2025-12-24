@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './PsyPage.css'; // This connects the CSS file above
 
 const PsyPage = () => {
@@ -144,7 +144,7 @@ const PsyPage = () => {
                       <span>{child.name}</span>
                       <span>{child.age}</span>
                       <span>{child.score}/40</span>
-                      <span className={`status ${getStatusClass(child.status)}`}>
+                      <span className={`case-status ${getStatusClass(child.status)}`}>
                         {child.status}
                       </span>
                       <Link className="view-btn" to={`/sdq/${child.id}`}> Review</Link>

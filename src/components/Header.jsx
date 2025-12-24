@@ -29,6 +29,8 @@ const Header = () => {
                 className={({ isActive }) => (isActive ? 'active' : '')}
                 onClick={() => setIsMenuOpen(false)}
               >
+                <i className="fa-solid fa-chart-line"></i>
+                
                 Dashboard
               </NavLink>
             </li>
@@ -39,6 +41,8 @@ const Header = () => {
                 className={({ isActive }) => (isActive ? 'active' : '')}
                 onClick={() => setIsMenuOpen(false)}
               >
+                <i className="fa-solid fa-folder-open"></i>
+
                 All Cases
               </NavLink>
             </li>
@@ -49,6 +53,8 @@ const Header = () => {
                 className={({ isActive }) => (isActive ? 'active' : '')}
                 onClick={() => setIsMenuOpen(false)}
               >
+                <i className="fa-solid fa-gear"></i>
+
                 Settings
               </NavLink>
             </li>

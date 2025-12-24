@@ -126,7 +126,7 @@ const CasesPage = () => {
 
                         <span>{child.age}</span>
                         <span>{child.score}/40</span>
-                        <span className={`status ${getStatusClass(child.status)}`}>
+                        <span className={`case-status ${getStatusClass(child.status)}`}>
                           {child.status}
                         </span>
                         <Link className="view-btn" to={`/sdq/${child.id}`}>Review</Link>
