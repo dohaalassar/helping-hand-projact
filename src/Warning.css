@@ -33,7 +33,7 @@ body {
   align-items: center;
 }
 
-.card {
+.card-Warning {
   background: var(--s-background-color);
   width: 100%;
   max-width: 720px;

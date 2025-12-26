@@ -44,7 +44,7 @@ Dr. Ahmed Al-Masri`);
 
   return (
     <div className="page">
-      <div className="card">
+      <div className="card-Warning">
         
         {/* Header / Back Link */}
 <Link className="back" to={`/child/${id}`}>
