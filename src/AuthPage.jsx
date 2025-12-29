@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import './AuthPage.css';
 
 const AuthPage = () => {
@@ -6,7 +7,7 @@ const AuthPage = () => {
   const [theme, setTheme] = useState('light');
   
   // Form States
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
+  const [loginData, setLoginData] = useState({ email: '', password: '', role: '' });
   const [signupData, setSignupData] = useState({ name: '', email: '', role: '', password: '' });
   const [errors, setErrors] = useState({});
 
@@ -38,22 +39,28 @@ const AuthPage = () => {
       }
     }
   };
+const navigate = useNavigate();
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
+ const handleLoginSubmit = (e) => {
+  e.preventDefault();
+  const newErrors = {};
 
-    if (!validateEmail(loginData.email)) newErrors.loginEmail = "Please enter a valid email address";
-    if (!loginData.password) newErrors.loginPassword = "Password is required";
+  if (!validateEmail(loginData.email)) newErrors.loginEmail = "Please enter a valid email address";
+  if (!loginData.password) newErrors.loginPassword = "Password is required";
+  if (!loginData.role) newErrors.loginRole = "Please select a role";
 
-    setErrors(newErrors);
+  setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      console.log("Login submitted:", loginData);
-      // In React Router: navigate('/parent/dashboard');
-      window.location.href = "parent-dashboard.html"; 
-    }
-  };
+  if (Object.keys(newErrors).length === 0) {
+    // خزّن الدور (اختياري ومفيد للحماية)
+    localStorage.setItem("hh-role", loginData.role);
+    localStorage.setItem("hh-auth", "true");
+
+    // توجيه
+    navigate(loginData.role === "specialist" ? "/psy/dashboard" : "/parent/dashboard");
+  }
+};
+
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +75,11 @@ const AuthPage = () => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log("Signup submitted:", signupData);
-      window.location.href = "parent-dashboard.html";
+     localStorage.setItem("hh-role", signupData.role);
+     localStorage.setItem("hh-auth", "true");
+
+     navigate(signupData.role === "specialist" ? "/psy/dashboard" : "/parent/dashboard");
+
     }
   };
 
@@ -150,20 +161,19 @@ const AuthPage = () => {
                   />
                   {errors.signupName && <p className="error-message">{errors.signupName}</p>}
                 </div>
-
                 <div className="form-group">
                   <label htmlFor="signup-email">Email</label>
-                  <input
+                   <input
                     type="email"
                     id="signup-email"
                     name="email"
                     placeholder="you@example.com"
                     value={signupData.email}
-                    onChange={(e) => handleInputChange(e, 'signup')}
-                    className={errors.signupEmail ? 'error' : ''}
-                  />
-                  {errors.signupEmail && <p className="error-message">{errors.signupEmail}</p>}
-                </div>
+                       onChange={(e) => handleInputChange(e, 'signup')}
+                         className={errors.signupEmail ? 'error' : ''}
+                         />
+                            {errors.signupEmail && <p className="error-message">{errors.signupEmail}</p>}
+                      </div>
 
                 <div className="form-group">
                   <label htmlFor="signup-role">Role</label>
