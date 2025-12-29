@@ -161,11 +161,6 @@ const PsyPage = () => {
                 </div>
               </div>
             </div>
-{/* 
-            <footer>
-              <p>&copy; 2025 Helping Hand. All rights reserved.</p>
-            </footer> */}
-
           </div>
         </div>
       </div>
